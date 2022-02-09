@@ -64,16 +64,20 @@ local button1 = section2:addButton("Destroy Gui", function()
     end
 end)
 -- second page
-local teleport = Hen:addPage("teleport", 5012544693)
-local Warp = teleport:addSection("Warp")
--- second page
-local theme = Hen:addPage("Theme", 5012544693)
-local colors = theme:addSection("Colors")
-
-for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
-colors:addColorPicker(theme, color, function(color3)
-Hen:setTheme(theme, color3)
+local Uisettings = Hen:addPage("Uisettings", 5012544693)
+local Settings = Uisettings:addSection("Setting")
+local button3 = Settings:addButton("Destroy Gui", function()
+    for i,v in pairs(game.CoreGui:GetChildren()) do
+        if v.Name == "HenTai HUB" then
+            v:Destroy()
+        end
+    end
 end)
-end
--- load
-Hen:SelectPage(Hen.pages[1], true) -- no default for more freedom
+local colors = Uisettings:addSection("Colors")
+for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
+    colors:addColorPicker(theme, color, function(color3)
+    Hen:setTheme(theme, color3)
+    end)
+    end
+    -- load
+    Hen:SelectPage(Hen.pages[1], true) -- no default for more freedom
